@@ -63,26 +63,26 @@ li button:hover {
   border-radius: 10px;
 }
 
-.SobreMi {
+#SobreMi {
   display: flex;
   justify-content: center;
   background-color: #238443;
   margin: -1rem -1rem 0 -1rem;
 }
 
-.Cheatsheet {
+#Cheatsheet {
   display: flex;
   justify-content: center;
   background-color: #41ab5d;
   margin: 0 -1rem;
 }
-.Proyectos {
+#Proyectos {
   display: flex;
   justify-content: center;
   background-color: #78c679;
   margin: 0 -1rem;
 }
-.Redes {
+#Redes {
   display: flex;
   justify-content: center;
   background-color: #addd8e;
