@@ -15,9 +15,11 @@ html {
 .titulo {
   font-size: 7em;
   font-weight: bold;
-  background: #004529;
+  background-image: url("./img/wallpaper.jpg");
+  background-position: 5px;
   text-align: center;
   margin: -1rem;
+  text-decoration: solid;
 }
 
 .menu {
