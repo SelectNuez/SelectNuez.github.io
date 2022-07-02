@@ -1,0 +1,71 @@
+/*
+Paleta:
+
+#ffffe5    #f7fcb9    #d9f0a3
+#addd8e    #78c679    #41ab5d
+#238443    #006837    #004529
+*/
+
+
+html{
+  min-width: 545px;
+  background: #d9f0a3;
+}
+
+input{
+  margin: 2px;
+}
+h2{
+  text-align: center;
+}
+.ingrediente {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 0.1fr repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr) repeat(2, 0.3fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.ingrediente_nuevo {
+  background-color: #78c679;
+  display: inherit;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-right: 2px solid #000;
+  border-radius: 5px;
+  grid-area: 1 / 1 / 4 / 3;
+
+}
+.ingrediente_calculado {
+  background-color: #78c679;
+  display: inherit;
+  justify-content: center;
+  margin-left: 0.5rem;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-left: 2px solid #000;
+  border-right: 3px solid #000;
+  border-radius: 5px;
+  grid-area: 1 / 4 / 4 / 6;
+}
+.personas {
+  background: #006837;
+  border: 3px solid #000;
+  border-radius: 5px;
+  margin-top: 1rem;
+min-width: 370px;
+  grid-area: 4 / 2 / 5 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones {
+  grid-area: 5 / 2 / 6 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

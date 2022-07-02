@@ -1,5 +1,5 @@
 /*
-Palete:
+Paleta:
 
 #ffffe5    #f7fcb9    #d9f0a3
 #addd8e    #78c679    #41ab5d
@@ -13,6 +13,7 @@ html {
 }
 
 .titulo {
+  background: #004529;
   font-size: 7em;
   font-weight: bold;
   background-image: url("./img/wallpaper.jpg");
