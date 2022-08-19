@@ -1,0 +1,69 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/recetas.css" type="text/css" />
+    <title>Calculadora Recetas</title>
+<script>
+    var personasOrig = new Number();
+    var personasCalc = new Number();
+    
+    function personas () {
+        
+        personasOrig = prompt("¿Para cuantas personas es la receta original?");
+        personasCalc = prompt("¿Para cuantas personas quieres que sea la receta?")
+        if(personasOrig != '' && personasCalc!= '')
+        {
+        document.getElementById("ingrediente_original_titulo").innerHTML = `Ingredientes para ${personasOrig} personas`;
+        document.getElementById("ingrediente_calculado_titulo").innerHTML = `Ingredientes para ${personasCalc} personas`;
+        document.getElementById("personas").innerHTML = `<input type="button" id="Add" value="Añadir ingrediente" onclick="add()"></input>`;
+        }
+        
+        else{
+
+            alert("No has introducido ningún valor");
+            personas();
+        }
+    }
+
+    function add() {
+        var ingrediente = prompt("¿Qué ingrediente quieres añadir?");
+        var cantidad = prompt("¿Intoduce la cantidad del ingrediente original?");
+
+        if(ingrediente != null && cantidad != null) {
+            document.getElementById("ingrediente_original").innerHTML += `<li>${ingrediente}   Cantidad:${cantidad}</li>`;
+            var total = cantidad * personasCalc/personasOrig;
+            document.getElementById("ingrediente_calculado").innerHTML += `<li>${ingrediente}   Cantidad:${total}</li>`;
+        }
+
+        else{
+            alert("No se ha podido añadir el ingrediente");
+        }
+    }
+</script>
+
+
+</head>
+<body>
+    <div id="personas">
+        <input type="button" id="AddPers" value="Click para establecer numero de personas" onclick="personas()"></input>
+    </div>
+
+<div id="ingrediente">
+    <div id="ingrediente_original">
+        <h2 id="ingrediente_original_titulo">Ingredientes Originales</h2>
+    </div>
+    <div id="ingrediente_calculado">
+        <h2 id="ingrediente_calculado_titulo">Ingredientes Calculados</h2>
+    </div>
+</div>
+<div id="botones">
+    <button onclick="location.reload()">Borrar</button>
+</div>
+    </body>
+</html>

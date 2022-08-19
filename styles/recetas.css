@@ -18,7 +18,7 @@ input{
 h2{
   text-align: center;
 }
-.ingrediente {
+#ingrediente {
   display: grid;
   grid-template-columns: repeat(2, 1fr) 0.1fr repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr) repeat(2, 0.3fr);
@@ -26,7 +26,7 @@ h2{
   grid-row-gap: 0px;
 }
 
-.ingrediente_nuevo {
+#ingrediente_original {
   background-color: #78c679;
   display: inherit;
   justify-content: center;
@@ -39,7 +39,7 @@ h2{
   grid-area: 1 / 1 / 4 / 3;
 
 }
-.ingrediente_calculado {
+#ingrediente_calculado {
   background-color: #78c679;
   display: inherit;
   justify-content: center;
@@ -51,7 +51,7 @@ h2{
   border-radius: 5px;
   grid-area: 1 / 4 / 4 / 6;
 }
-.personas {
+#personas {
   background: #006837;
   border: 3px solid #000;
   border-radius: 5px;
@@ -63,7 +63,7 @@ min-width: 370px;
   align-items: center;
 }
 
-.botones {
+#botones {
   grid-area: 5 / 2 / 6 / 5;
   display: flex;
   justify-content: center;
