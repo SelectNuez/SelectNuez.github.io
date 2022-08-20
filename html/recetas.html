@@ -16,6 +16,20 @@
     var totalPrecio = 0;
     var precioIngrediente = 0;
 
+    function estilos () {
+        var styles =`
+            #precioTotal{
+                border: 3px solid #000;
+                max-width: 300px;
+                border-radius: 5px;
+                background-color: #fdc9cb;
+              }`
+
+            var styleSheet = document.createElement("style");
+            styleSheet.innerText = styles;
+            document.head.appendChild(styleSheet);
+    }
+
     function personas () {
         personasOrig = prompt("¿Para cuantas personas es la receta original?");
         personasCalc = prompt("¿Para cuantas personas quieres que sea la receta?")
@@ -34,6 +48,9 @@
                 <th>Cantidad</th>
                 <th>Precio</th>
             </tr>`;
+            estilos();
+
+            document.getElementById("precioTotal").innerHTML =  "Aqui se mostrara el precio total de la receta";
         }
         else{
             document.getElementById("tabla_original").innerHTML += `
@@ -41,6 +58,7 @@
                 <th>Ingrediente</th>
                 <th>Cantidad</th>
             </tr>`;
+            estilos();
             document.getElementById("precioTotal").innerHTML = 
             `No se va a calcular el precio total`
             document.getElementById("tabla_calculado").innerHTML += `
