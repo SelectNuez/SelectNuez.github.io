@@ -94,26 +94,35 @@
     function add() {
         var ingrediente = prompt("¿Qué ingrediente quieres añadir?");
         var cantidad = prompt("Intoduce la cantidad del ingrediente original en gramos");
-        if(calculoPrecio = true){
+        if(calculoPrecio == true){
             var precio = prompt("Introduce el precio por kilo del ingrediente");
         }
 
         if(ingrediente != null && cantidad != null) {
-            precioIngrediente = cantidad * precio/1000;
-            document.getElementById("tabla_original").innerHTML += `<tr><td>${ingrediente}</td>   <td>${cantidad}</td>   <td>${precioIngrediente}€</td></tr>`;
+            if(calculoPrecio == true){
+                precioIngrediente = cantidad * precio/1000;
+                document.getElementById("tabla_original").innerHTML += `<tr><td>${ingrediente}</td>   <td>${cantidad}</td>   <td>${precioIngrediente}€</td></tr>`;
+            }
+            else{
+                document.getElementById("tabla_original").innerHTML += `<tr><td>${ingrediente}</td>   <td>${cantidad}</td></tr>`;
+            }
             var total = cantidad * personasCalc/personasOrig;
             if(calculoPrecio == true){
                 precioIngrediente = total * precio/1000;
+                document.getElementById("tabla_calculado").innerHTML += `<tr><td>${ingrediente}</td>   <td>${total}</td>   <td>${precioIngrediente}€</td></tr>`;
             }
-            document.getElementById("tabla_calculado").innerHTML += `<tr><td>${ingrediente}</td>   <td>${total}</td>   <td>${precioIngrediente}€</td></tr>`;
+            
+            else{
+                document.getElementById("tabla_calculado").innerHTML += `<tr><td>${ingrediente}</td>   <td>${total}</td></tr>`;
+            }
             if(calculoPrecio == true){
                 totalPrecio += total * precio /1000;
                 document.getElementById("precioTotal").innerHTML = `El precio total es ${totalPrecio}€`;
         }
 
-        else{
-            alert("No se ha podido añadir el ingrediente");
-        }
+
+    }        else{
+        alert("No se ha podido añadir el ingrediente");
     }
 }
 </script>
