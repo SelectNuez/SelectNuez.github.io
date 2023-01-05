@@ -1,111 +1,148 @@
-/*
-Paleta:
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P');
 
-#ffffe5    #f7fcb9    #d9f0a3
-#addd8e    #78c679    #41ab5d
-#238443    #006837    #004529
-*/
-
-html {
-  background: #d9f0a3;
-  min-width: 660px;
-  position: relative;
+body {
+    background: linear-gradient(135deg, #BDF2D5 0%, #4B5D67 25%, #484848 50%, #3C2C3E 75%, #FF06B7 100%);
+    background-size: 100% 100%;
+    color: white;
+    font-family: monospace;
+    min-width: 710px;
+    min-height: 800px;
 }
 
+
+
+.titulo_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 .titulo {
-  background: #004529;
-  font-size: 7em;
-  font-weight: bold;
-  background-image: url("./img/wallpaper.jpg");
-  background-position: 5px;
-  text-align: center;
-  margin: -1rem;
-  text-decoration: solid;
-}
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    margin: 20px ;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    animation: zoomOut 5s infinite;
+
+  }
+  
+  .titulo span {
+    display: inline-block;
+    position: relative;
+    animation: spin 2s infinite;
+  }
+  
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+  }
+  
 
 .menu {
-  border: 1px solid #000;
-  padding: 1rem;
-}
-
-ul {
-  list-style-type: none;
-  position: relative;
-  margin: 1rem -1rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 10%;
   padding: 0;
-  overflow: hidden;
-  background-color: #006837;
-  text-align: center;
+  max-width: 80%;
 }
 
-li {
-  display: inline-block;
+.menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-li a {
-  display: block;
-  color: green;
-  text-align: center;
-  padding: 14px 16px;
+.menu button {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #00b8d4;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .menu button:hover {
+    background-color: #0052cc;
+  }
+  
+  .menu button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+  
+
+
+.menu a {
   text-decoration: none;
+  color: inherit;
 }
 
-a {
-  display: block;
-  color: #000;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li button {
-  border-radius: 5px;
-}
-
-li button:hover {
-  background-color: #dddddd;
-  border-radius: 10px;
-}
-
-#SobreMi {
-  display: flex;
-  justify-content: center;
-  background-color: #238443;
-  margin: -1rem -1rem 0 -1rem;
-}
-
-#Cheatsheet {
-  display: flex;
-  justify-content: center;
-  background-color: #41ab5d;
-  margin: 0 -1rem;
-}
-#Proyectos {
-  display: flex;
-  justify-content: center;
-  background-color: #78c679;
-  margin: 0 -1rem;
-}
-#Redes {
-  display: flex;
-  justify-content: center;
-  background-color: #addd8e;
-  margin: 0 -1rem -1rem -1rem;
-}
 
 .base {
-  background-color: #fff;
-  border: 2px solid #000;
-  min-height: 10rem;
-  width: 80%;
-  min-width:50rem;
-  margin: 1rem;
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #555;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 1rem;
-  box-shadow: #000 0px 0px 10px;
-  text-align:justify;
-
 }
 
-.icon{
-  width: 2rem;
+.base button {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #00b8d4;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .base button:hover {
+    background-color: #0052cc;
+    color: #fff;
+  }
+  
+  .base button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+
+  .base a {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+  }
+  
+  .base a:hover {
+    color: #0052cc;
+  }
+
+.icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#icons_notes{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  color: #222;
 }

@@ -11,9 +11,11 @@
 </head>
 
 <body>
-    <div class="titulo">
-        SelectNuez
-    </div>
+
+<div class="titulo_container">
+        <div class="titulo">SelectNuez</div>
+        </div>
+
 
         <ul class="menu">
             <li>
@@ -63,8 +65,31 @@ Este es mi punto de partida, asi que vamos con ello.<br>
 
             </div>
             </div>
-            <a target="_blank" href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos">Gorjeo iconos creados por Freepik - Flaticon</a>
+            <a id="icons_notes" target="_blank" href="https://www.flaticon.es/iconos-gratis/gorjeo" title="gorjeo iconos">Gorjeo iconos creados por Freepik - Flaticon</a>
+            <div id="pixels"></div>
 
+            <script>
+                // Create a media query to check the viewport size
+                const mq = window.matchMedia("(min-height: 800px)");
+              
+                // Function to handle media query change events
+                function handleMqChange(mq) {
+                  // If the viewport is at least 800 pixels tall
+                  if (mq.matches) {
+                    // Show the div
+                    document.getElementById("icons_notes").style.display = "block";
+                  } else {
+                    // Hide the div
+                    document.getElementById("icons_notes").style.display = "none";
+                  }
+                }
+              
+                // Add an event listener to handle media query change events
+                mq.addListener(handleMqChange);
+              
+                // Call the function to handle the initial state of the media query
+                handleMqChange(mq);
+              </script>
 </body>
 
 </html>
