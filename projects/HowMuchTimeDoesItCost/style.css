@@ -1,4 +1,3 @@
-/* Centramos todo el contenido de la pagina tanto en altura como en posicion*/
 body,
 html {
   margin: 0;
@@ -154,12 +153,12 @@ label:after {
 }
 .form-group {
   flex: 1;
-  margin-right: 5px; /* Añade un margen entre los campos (opcional) */
-  padding: 8px; /* Añade un relleno para mejorar la apariencia (opcional) */
+  margin-right: 5px; 
+  padding: 8px; 
 }
 
 .form-group:last-child {
-  margin-right: 0; /* Elimina el margen derecho en el último campo (opcional) */
+  margin-right: 0; 
 }
 
 .form-group:first-child {
@@ -174,7 +173,6 @@ label:after {
   border-radius: 10px;
   background-color: aliceblue;
   padding: 10px;
-  /* Añadimos un box shadow de 0 offset 20 blur radius y 15 spread radius */
   box-shadow: 0 30px 15px rgba(0, 0, 0, 0.5);
 }
 
