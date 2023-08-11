@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Titillium+Web&display=swap');
+      </style>
+    <script src="script.js"></script>
+    <title>How Much Time Does It Cost</title>
+  </head>
+  <body>
+    <div id ="background" class="background-light">
+      <div id="dark-mode-switch">
+        <input type="checkbox" id="darkmode-toggle"/>
+        <label for="darkmode-toggle">
+      </div>
+      <div id="bloque-central">
+        <div id="instrucciones" class="box">
+          <h1>How Much Time Does It Cost</h1>
+          <p>
+            Introduce cuanto cuesta el producto, cuanto ganas al mes y cuantas
+            horas haces a la semana y te diremos cuanto tiempo te cuesta comprar
+            ese producto.
+          </p>
+        </div>
+        <form id="formulario" class="box">
+          <div class="form-group form-data">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="Price"
+              id="price-input"
+              aria-describedby="helpId"
+              placeholder="Precio producto"
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Dudas?</small> -->
+          </div>
+          <div class="form-group form-data row">
+            <!-- <label for="" class="form-label"
+            >Introduce cuanto ganas al mes €€€</label
+          > -->
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="money"
+              id="money-input"
+              aria-describedby="helpId"
+              placeholder="Salario neto mensual"
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Dudas?</small> -->
+          </div>
+          <div class="form-group form-data">
+            <!-- <label for="" class="form-label"
+            >Introduce cuantas horas haces a la semana</label
+          > -->
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              name="Time"
+              id="time-input"
+              aria-describedby="helpId"
+              placeholder="Horas semanales"
+            />
+            <!-- <small id="helpId" class="form-text text-muted">Dudas?</small> -->
+          </div>
+          <div id="enviar">
+            <button class="btn btn-primary form-group" type="submit">
+              Calcular
+            </button>
+          </div>
+          <div id="borrar">
+            <button class="btn btn-primary form-group" type="reset">
+              Borrar
+            </button>
+          </div>
+        </form>
+        <div id="fullResult">
+          <div id="result"></div>
+          <div id="days"></div>
+          <div id="weeks"></div>
+        </div>
+      </div>
+      <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+  </body>
+</html>
