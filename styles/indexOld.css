@@ -1,0 +1,111 @@
+/*
+Paleta:
+
+#ffffe5    #f7fcb9    #d9f0a3
+#addd8e    #78c679    #41ab5d
+#238443    #006837    #004529
+*/
+
+html {
+  background: #d9f0a3;
+  min-width: 660px;
+  position: relative;
+}
+
+.titulo {
+  background: #004529;
+  font-size: 7em;
+  font-weight: bold;
+  background-image: url("./img/wallpaper.jpg");
+  background-position: 5px;
+  text-align: center;
+  margin: -1rem;
+  text-decoration: solid;
+}
+
+.menu {
+  border: 1px solid #000;
+  padding: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  position: relative;
+  margin: 1rem -1rem;
+  padding: 0;
+  overflow: hidden;
+  background-color: #006837;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: green;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a {
+  display: block;
+  color: #000;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li button {
+  border-radius: 5px;
+}
+
+li button:hover {
+  background-color: #dddddd;
+  border-radius: 10px;
+}
+
+#SobreMi {
+  display: flex;
+  justify-content: center;
+  background-color: #238443;
+  margin: -1rem -1rem 0 -1rem;
+}
+
+#Cheatsheet {
+  display: flex;
+  justify-content: center;
+  background-color: #41ab5d;
+  margin: 0 -1rem;
+}
+#Proyectos {
+  display: flex;
+  justify-content: center;
+  background-color: #78c679;
+  margin: 0 -1rem;
+}
+#Redes {
+  display: flex;
+  justify-content: center;
+  background-color: #addd8e;
+  margin: 0 -1rem -1rem -1rem;
+}
+
+.base {
+  background-color: #fff;
+  border: 2px solid #000;
+  min-height: 10rem;
+  width: 80%;
+  min-width:50rem;
+  margin: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: #000 0px 0px 10px;
+  text-align:justify;
+
+}
+
+.icon{
+  width: 2rem;
+}
