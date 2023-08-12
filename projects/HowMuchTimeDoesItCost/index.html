@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Titillium+Web&display=swap');
-      </style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Titillium+Web&display=swap");
+    </style>
     <script src="script.js"></script>
     <title>How Much Time Does It Cost</title>
   </head>
   <body>
-    <div id ="background" class="background-light">
+    <div id="background" class="background-light">
       <div id="dark-mode-switch">
-        <input type="checkbox" id="darkmode-toggle"/>
-        <label for="darkmode-toggle">
+        <input type="checkbox" id="darkmode-toggle" />
+        <label for="darkmode-toggle"> </label>
       </div>
       <div id="bloque-central">
         <div id="instrucciones" class="box">
           <h1>How Much Time Does It Cost</h1>
-          <p>
+          <p id="text-instructions">
             Introduce cuanto cuesta el producto, cuanto ganas al mes y cuantas
             horas haces a la semana y te diremos cuanto tiempo te cuesta comprar
             ese producto.
           </p>
+          <button id="openModalBtn">Instrucciones</button>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>
+                Introduce cuanto cuesta el producto, cuanto ganas al mes y
+                cuantas horas haces a la semana y te diremos cuanto tiempo te
+                cuesta comprar ese producto.
+              </p>
+            </div>
+          </div>
         </div>
         <form id="formulario" class="box">
           <div class="form-group form-data">

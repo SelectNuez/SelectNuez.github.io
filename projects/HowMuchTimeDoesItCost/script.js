@@ -1,5 +1,26 @@
 // Esperamos a que cargue la pagina HTML
 document.addEventListener("DOMContentLoaded", function (event) {
+
+    const openModalBtn = document.getElementById("openModalBtn");
+    const modal = document.getElementById("myModal");
+    const closeModalBtn = document.querySelector(".close");
+
+    openModalBtn.addEventListener("click", function () {
+        modal.style.display = "block";
+    });
+
+    closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+
+
   // Cargamos el switch del modo oscuro
   const darkModeSwitch = document.getElementById("darkmode-toggle");
   //Si cambia el estado del switch, cambiamos el modo
@@ -122,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       precioMinuto = Math.floor(precioMinuto);
       precioHora = Math.floor(precioHora);
+      precioSegundo = Math.floor(precioSegundo);
 
       var dias = precioHora / 8;
       var semanas = (dias * 8) / data.timeInput;
