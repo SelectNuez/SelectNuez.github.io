@@ -1,25 +1,22 @@
 // Esperamos a que cargue la pagina HTML
 document.addEventListener("DOMContentLoaded", function (event) {
+  const openModalBtn = document.getElementById("openModalBtn");
+  const modal = document.getElementById("myModal");
+  const closeModalBtn = document.querySelector(".close");
 
-    const openModalBtn = document.getElementById("openModalBtn");
-    const modal = document.getElementById("myModal");
-    const closeModalBtn = document.querySelector(".close");
+  openModalBtn.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
 
-    openModalBtn.addEventListener("click", function () {
-        modal.style.display = "block";
-    });
+  closeModalBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
 
-    closeModalBtn.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 
   // Cargamos el switch del modo oscuro
   const darkModeSwitch = document.getElementById("darkmode-toggle");
@@ -63,16 +60,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const validarFormulario = (priceData, moneyData, timeData) => {
     // Comprobamos que los campos no esten vacios
     if (priceData == "" || moneyData == "" || timeData == "") {
-      document.getElementById("fullResult").innerHTML =
+      document.getElementById("result").innerHTML =
         "Todos los campos son obligatorios";
+      document.getElementById("days").innerHTML = "";
+      document.getElementById("weeks").innerHTML = "";
       document.getElementById("fullResult").classList.add("box");
 
       return false;
     }
     // Comprobamos que los campos sean numeros
     else if (isNaN(priceData) || isNaN(moneyData) || isNaN(timeData)) {
-      document.getElementById("fullResult").innerHTML =
+      document.getElementById("result").innerHTML =
         "Todos los campos deben ser numeros";
+      document.getElementById("days").innerHTML = "";
+      document.getElementById("weeks").innerHTML = "";
       document.getElementById("fullResult").classList.add("box");
 
       return false;
