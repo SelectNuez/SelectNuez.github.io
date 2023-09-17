@@ -1,157 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-        </style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+    </style>
+    <script src="js/script.js"></script>
     <title>Calculadora Recetas</title>
-<script>
-    var personasOrig = new Number();
-    var personasCalc = new Number();
-    var calculoPrecio;
-    var totalPrecio = 0;
-    var precioIngrediente = 0;
+  </head>
+  <body>
+    <div id="dataTransf" data-personasOrig="0" data-personasCalc="0"></div>
 
-    function estilos () {
-        var styles =`
-            #precioTotal{
-                border: 3px solid #000;
-                max-width: 300px;
-                border-radius: 5px;
-                background-color: #fdc9cb;
-              }`
+    <div id="content">
+      <div id="personas">
+        <!-- <input type="button" id="AddPers" value="Click para establecer numero de personas" onclick="personas()"></input> -->
+        <div class="data">
+          <label for="perOrig">Numero original comensales</label>
+          <input type="number" name="perOrig" class="AddPers" id="perOrig" />
+        </div>
+        <div class="data">
+          <label for="perNew">Numero nuevo comensales</label>
+          <input type="number" name="perNew" class="AddPers" id="perNew" />
+        </div>
+        <!-- <div class="data">
+          <label for="calcPrecio">¿Quieres que calculemos el coste? </label>
+          <input type="checkbox" name="calCo" id="calCo" />
+        </div> -->
+      </div>
 
-            var styleSheet = document.createElement("style");
-            styleSheet.innerText = styles;
-            document.head.appendChild(styleSheet);
-    }
-
-    function personas () {
-        personasOrig = prompt("¿Para cuantas personas es la receta original?");
-        personasCalc = prompt("¿Para cuantas personas quieres que sea la receta?")
-        calculoPrecio = confirm("¿Quieres que se calcule el precio de la receta?");
-        
-        if(calculoPrecio == true){
-            document.getElementById("tabla_original").innerHTML += `
-            <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-            </tr>`;
-            document.getElementById("tabla_calculado").innerHTML += 
-            `<tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-            </tr>`;
-            estilos();
-
-            document.getElementById("precioTotal").innerHTML =  "Aqui se mostrara el precio total de la receta";
-        }
-        else{
-            document.getElementById("tabla_original").innerHTML += `
-            <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-            </tr>`;
-            estilos();
-            document.getElementById("precioTotal").innerHTML = 
-            `No se va a calcular el precio total`
-            document.getElementById("tabla_calculado").innerHTML += `
-            <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-            </tr>`;
-        }
-
-        if(personasOrig != '' && personasCalc!= '' && personasOrig != null && personasCalc != null) {
-            if(personasOrig > 0 && personasCalc > 0) {
-                if(personasOrig == 1){
-                    document.getElementById("ingrediente_original_titulo").innerHTML = `Ingredientes para 1 persona`;
-                } else {
-                    document.getElementById("ingrediente_original_titulo").innerHTML = `Ingredientes para ${personasOrig} personas`;
-                }
-                if(personasCalc == 1){
-                    document.getElementById("ingrediente_calculado_titulo").innerHTML = `Ingredientes para 1 persona`;
-                } else {
-                    document.getElementById("ingrediente_calculado_titulo").innerHTML = `Ingredientes para ${personasCalc} personas`;
-                }
-                document.getElementById("personas").innerHTML = `<input type="button" id="Add" value="Añadir ingrediente" onclick="add()"></input>`;
-            } else {
-                alert("Introduce un número mayor que 0.");
-                personas();
-            }
-        } else {
-            alert("Introduce un número.");
-            personas();
-        }
-    }
-
-    function add() {
-        var ingrediente = prompt("¿Qué ingrediente quieres añadir?");
-        var cantidad = prompt("Intoduce la cantidad del ingrediente original en gramos");
-        if(calculoPrecio == true){
-            var precio = prompt("Introduce el precio por kilo del ingrediente");
-        }
-
-        if(ingrediente != null && cantidad != null) {
-            if(calculoPrecio == true){
-                precioIngrediente = cantidad * precio/1000;
-                document.getElementById("tabla_original").innerHTML += `<tr><td>${ingrediente}</td>   <td>${cantidad}</td>   <td>${precioIngrediente}€</td></tr>`;
-            }
-            else{
-                document.getElementById("tabla_original").innerHTML += `<tr><td>${ingrediente}</td>   <td>${cantidad}</td></tr>`;
-            }
-            var total = cantidad * personasCalc/personasOrig;
-            if(calculoPrecio == true){
-                precioIngrediente = total * precio/1000;
-                document.getElementById("tabla_calculado").innerHTML += `<tr><td>${ingrediente}</td>   <td>${total}</td>   <td>${precioIngrediente}€</td></tr>`;
-            }
-            
-            else{
-                document.getElementById("tabla_calculado").innerHTML += `<tr><td>${ingrediente}</td>   <td>${total}</td></tr>`;
-            }
-            if(calculoPrecio == true){
-                totalPrecio += total * precio /1000;
-                document.getElementById("precioTotal").innerHTML = `El precio total es ${totalPrecio}€`;
-        }
-
-
-    }        else{
-        alert("No se ha podido añadir el ingrediente");
-    }
-}
-</script>
-
-
-</head>
-<body>
-    <div id="personas">
-        <input type="button" id="AddPers" value="Click para establecer numero de personas" onclick="personas()"></input>
+      
+      <div id="botones">
+        <button id="setPer">Introducir Ingredientes</button>
+        <!-- <button onclick="location.reload()">Borrar</button> -->
+      </div>
+      
+      </div>
+      <div id="alerts"></div>
     </div>
-
-<div id="ingrediente">
-    <div id="ingrediente_original">
-        <h2 id="ingrediente_original_titulo">Ingredientes Originales</h2>
-        <table id="tabla_original">
-        </table>
-
-    </div>
-    <div id="ingrediente_calculado">
-        <h2 id="ingrediente_calculado_titulo">Ingredientes Calculados</h2>
-        <table id="tabla_calculado">
-            </table>
-    </div>
-</div>
-<div id="precioTotal">
-
-</div>
-<div id="botones">
-    <button onclick="location.reload()">Borrar</button>
-</div>
-    </body>
+  </body>
 </html>

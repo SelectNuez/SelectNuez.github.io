@@ -1,0 +1,29 @@
+<div id="ingrediente">
+  <div id="ingredientes_box">
+    <h2 id="ingredientes_titulo">Ingredientes Originales</h2>
+    <div class="ingredientesBoxContainer">
+      <div class="ingredientColumn">
+        <div class="ingredientTitle">Ingrediente</div>
+        <input type="text" name="in_ingre" id="in_ingre" />
+        <div class="ingredientData" id="saved_ingredients_name"></div>
+      </div>
+      <div class="ingredientColumn">
+        <div class="ingredientTitle">Cantidad</div>
+        <input type="number" name="in_cant" id="in_cant" />
+        <div class="ingredientData" id="saved_ingredients_amount"></div>
+      </div>
+      <div class="ingredientColumn">
+        <div class="ingredientTitle">Precio</div>
+        <input type="number" name="in_price" id="in_price" />
+        <div class="ingredientData" id="saved_ingredients_price"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="precioTotal"></div>
+<div id="botones">
+  <button id="addIngre">Nuevo Ingrediente</button>
+  <button id="calculate">Calcular</button>
+  <button onclick="location.reload()">Volver a empezar</button>
+</div>
+<div id="alerts"></div>
