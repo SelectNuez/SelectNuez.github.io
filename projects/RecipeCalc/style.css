@@ -1,13 +1,15 @@
-
 * {
   font-family: "Quicksand", sans-serif;
 }
 
-html {
-  background-image: url("img/background.png");
-  background-size: 180%;
+html{
+    /* background-image: url("img/background.png"); */
+  background-image: url("img/background.jpg");
+  background-size: 120% 120%;
   background-repeat: no-repeat;
+  height: 100%;
 }
+
 #content{
   width: 100%;
   display: flex;
@@ -20,7 +22,6 @@ html {
 
 body {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,8 +36,7 @@ body {
   border-radius: 5px;
   margin: 20px;
   padding: 0.5rem;
-  min-width: 370px;
-  width: 70%;
+  min-width: 340px;
   display: block;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,8 @@ body {
 .data {
   padding: 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #calCo {
@@ -63,6 +65,7 @@ label {
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
+  padding: 0.5rem;
 }
 
 button {
@@ -77,6 +80,10 @@ button {
 h2 {
   text-align: center;
 }
+#ingrediente {
+  min-width: 340px;
+  max-width: 90%; /* Cambiado para que se adapte al ancho de la página */
+}
 
 .ingredientTitle {
   font-size: 1.2rem;
@@ -84,8 +91,6 @@ h2 {
   margin: 0.5rem;
   text-align: center;
 }
-
-
 
 #ingredientes_box {
   background-color: #fadce6;
@@ -95,30 +100,25 @@ h2 {
   border-radius: 5px;
 }
 
-.ingredientesBoxContainer{
+.ingredientesBoxContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: normal;
-  align-content: normal;
+  flex-wrap: wrap; /* Cambiado para que los elementos se envuelvan cuando el espacio es insuficiente */
+  justify-content: space-between; /* Cambiado para distribuir los elementos horizontalmente */
+  align-items: flex-start; /* Cambiado para alinear los elementos en la parte superior */
 }
 
+.ingredientColumn input {
+  max-width: 90%; /* El input se ajustará al ancho máximo de su contenedor */
+}
 .ingredientColumn {
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
+  flex: 1;
   margin-right: 8px;
+  margin-bottom: 8px; /* Espacio inferior entre columnas */
+  max-width: calc(33.33% - 8px); /* Calcula el ancho máximo de cada columna */
 }
 
-.ingredientColumn::last-child {
-  margin-right: 0;
-}
-
-.ingredientData{
+.ingredientData {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,12 +130,36 @@ h2 {
   flex-direction: column;
 }
 
-#botones button{
-  margin-right:10px ;
+#botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
-#botones button:last-child{
-  margin-right:0px ;
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; 
+  margin-bottom: 10px; 
 }
+
+#botones button {
+  width: 100%;
+  padding: 10px; 
+  box-sizing: border-box;
+}
+
+button:hover{
+  background-color: #c38f82;
+}
+
+button:active{
+  background-color: #906960;
+}
+
+
 #saved_ingredients{
   display: flex;
   justify-content:space-around;
@@ -173,10 +197,3 @@ td {
   font-weight: 600;
 }
 
-button:hover{
-  background-color: #c38f82;
-}
-
-button:active{
-  background-color: #906960;
-}
