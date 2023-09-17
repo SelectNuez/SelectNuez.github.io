@@ -3,7 +3,6 @@
 }
 
 html{
-    /* background-image: url("img/background.png"); */
   background-image: url("img/background.jpg");
   background-size: 120% 120%;
   background-repeat: no-repeat;
@@ -82,7 +81,7 @@ h2 {
 }
 #ingrediente {
   min-width: 340px;
-  max-width: 90%; /* Cambiado para que se adapte al ancho de la página */
+  max-width: 90%; 
 }
 
 .ingredientTitle {
@@ -103,19 +102,19 @@ h2 {
 .ingredientesBoxContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Cambiado para que los elementos se envuelvan cuando el espacio es insuficiente */
-  justify-content: space-between; /* Cambiado para distribuir los elementos horizontalmente */
-  align-items: flex-start; /* Cambiado para alinear los elementos en la parte superior */
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: flex-start; 
 }
 
 .ingredientColumn input {
-  max-width: 90%; /* El input se ajustará al ancho máximo de su contenedor */
+  max-width: 90%; 
 }
 .ingredientColumn {
   flex: 1;
   margin-right: 8px;
-  margin-bottom: 8px; /* Espacio inferior entre columnas */
-  max-width: calc(33.33% - 8px); /* Calcula el ancho máximo de cada columna */
+  margin-bottom: 8px; 
+  max-width: calc(33.33% - 8px); 
 }
 
 .ingredientData {
@@ -197,3 +196,17 @@ td {
   font-weight: 600;
 }
 
+footer{
+  position: absolute;
+  bottom: 0px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-align: center;
+  color: #623231;
+}
+
+a{
+  color: #623231;
+  text-decoration: none;
+}
