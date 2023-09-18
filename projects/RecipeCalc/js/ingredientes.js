@@ -72,7 +72,7 @@ const cleanInput = () => {
 const printData = (newIngrediente, newCantidad, newPrecio) => {
 
     document.getElementById("saved_ingredients_name").innerHTML += newIngrediente + "<br>";
-    document.getElementById("saved_ingredients_amount").innerHTML += newCantidad + " g" + "<br>";
+    document.getElementById("saved_ingredients_amount").innerHTML += newCantidad  + "<br>";
     document.getElementById("saved_ingredients_price").innerHTML += newPrecio + " €" + "<br>";
 };
 
@@ -93,7 +93,7 @@ const calculate = (oldIngreJSON, newIngreJSON, personasCalc, personasOrig) => {
 const printCalculatedData = (newIngreJSON) => {
   newIngreJSON.receta.forEach((ingrediente) => {
     document.getElementById("saved_ingredients_name").innerHTML += ingrediente.nombre + "<br>";
-    document.getElementById("saved_ingredients_amount").innerHTML += ingrediente.cantidad + " g" + "<br>";
+    document.getElementById("saved_ingredients_amount").innerHTML += ingrediente.cantidad  + "<br>";
     document.getElementById("saved_ingredients_price").innerHTML += ingrediente.precio + " €" + "<br>";
   });
 };
