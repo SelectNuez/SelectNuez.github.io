@@ -158,7 +158,6 @@ button:active{
   background-color: #906960;
 }
 
-
 #saved_ingredients{
   display: flex;
   justify-content:space-around;
@@ -209,4 +208,20 @@ footer{
 a{
   color: #623231;
   text-decoration: none;
+}
+
+a:hover{
+  color: #906960;
+}
+
+.notes{
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: center;
+  color: #623231;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffd09e;
+  border: 3px solid #000;
+  border-radius: 5px;
 }

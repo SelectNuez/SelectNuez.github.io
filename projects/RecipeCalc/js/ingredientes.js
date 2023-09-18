@@ -1,11 +1,9 @@
 const oldIngreJSON = {
-  receta: [
-  ],
+  receta: [],
 };
 
 const newIngreJSON = {
-  receta: [
-  ],
+  receta: [],
 };
 //Establecemos las personas
 var divElement = document.getElementById("dataTransf");
@@ -18,15 +16,21 @@ const getData = () => {
   var newCantidad = document.getElementById("in_cant").value;
   var newPrecio = document.getElementById("in_price").value;
 
+  if (!newPrecio) {
+    newPrecio = 0;
+  }
+
   var resultData = checkData(newIngrediente, newCantidad, newPrecio);
   setData(resultData, newIngrediente, newCantidad, newPrecio);
+
+  return resultData;
 };
 
 const checkData = (newIngrediente, newCantidad, newPrecio) => {
   const resultado =
-    newIngrediente === "" || newCantidad === "" || newPrecio === ""
+    newIngrediente === "" || newCantidad === "" 
       ? 0
-      : newCantidad <= 0 || newPrecio <= 0
+      : newCantidad <= 0 || newPrecio < 0
       ? 1
       : 2;
   printAlert(resultado);
@@ -70,10 +74,12 @@ const cleanInput = () => {
 };
 
 const printData = (newIngrediente, newCantidad, newPrecio) => {
-
-    document.getElementById("saved_ingredients_name").innerHTML += newIngrediente + "<br>";
-    document.getElementById("saved_ingredients_amount").innerHTML += newCantidad  + "<br>";
-    document.getElementById("saved_ingredients_price").innerHTML += newPrecio + " €" + "<br>";
+  document.getElementById("saved_ingredients_name").innerHTML +=
+    newIngrediente + "<br>";
+  document.getElementById("saved_ingredients_amount").innerHTML +=
+    newCantidad + "<br>";
+  document.getElementById("saved_ingredients_price").innerHTML +=
+    newPrecio + " €" + "<br>";
 };
 
 const calculate = (oldIngreJSON, newIngreJSON, personasCalc, personasOrig) => {
@@ -82,7 +88,9 @@ const calculate = (oldIngreJSON, newIngreJSON, personasCalc, personasOrig) => {
     //El nombre lo añadimos igual
     const ingredienteCalculado = {
       nombre: ingrediente.nombre,
-      cantidad: ((ingrediente.cantidad * personasCalc) / personasOrig).toFixed(2),
+      cantidad: ((ingrediente.cantidad * personasCalc) / personasOrig).toFixed(
+        2
+      ),
       precio: ((ingrediente.precio * personasCalc) / personasOrig).toFixed(2),
     };
 
@@ -92,9 +100,12 @@ const calculate = (oldIngreJSON, newIngreJSON, personasCalc, personasOrig) => {
 
 const printCalculatedData = (newIngreJSON) => {
   newIngreJSON.receta.forEach((ingrediente) => {
-    document.getElementById("saved_ingredients_name").innerHTML += ingrediente.nombre + "<br>";
-    document.getElementById("saved_ingredients_amount").innerHTML += ingrediente.cantidad  + "<br>";
-    document.getElementById("saved_ingredients_price").innerHTML += ingrediente.precio + " €" + "<br>";
+    document.getElementById("saved_ingredients_name").innerHTML +=
+      ingrediente.nombre + "<br>";
+    document.getElementById("saved_ingredients_amount").innerHTML +=
+      ingrediente.cantidad + "<br>";
+    document.getElementById("saved_ingredients_price").innerHTML +=
+      ingrediente.precio + " €" + "<br>";
   });
 };
 
@@ -129,6 +140,13 @@ document.getElementById("addIngre").addEventListener("click", function () {
   getData();
 });
 document.getElementById("calculate").addEventListener("click", function () {
-  getData();
-  calculatedIngedients(oldIngreJSON, newIngreJSON, personasCalc, personasOrig);
+
+  if (getData() == 2) {
+    calculatedIngedients(
+      oldIngreJSON,
+      newIngreJSON,
+      personasCalc,
+      personasOrig
+    );
+  }
 });
