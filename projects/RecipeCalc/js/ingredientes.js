@@ -33,6 +33,7 @@ const checkData = (newIngrediente, newCantidad, newPrecio) => {
       : newCantidad <= 0 || newPrecio < 0
       ? 1
       : 2;
+      console.log(resultado)
   printAlert(resultado);
   return resultado;
 };
@@ -140,8 +141,8 @@ document.getElementById("addIngre").addEventListener("click", function () {
   getData();
 });
 document.getElementById("calculate").addEventListener("click", function () {
-
-  if (getData() == 2) {
+  console.log("Longitud: " + oldIngreJSON.receta.length)
+  if (!getData() == 1 && !oldIngreJSON.receta.length == 0) {
     calculatedIngedients(
       oldIngreJSON,
       newIngreJSON,
